@@ -17,20 +17,39 @@
         </h1>
 
         <div id="app">
-            View the answer in the console
+            <fieldset>
+                <legend title="amount">VAT Calculator</legend>
+              <label for="amount">Amount</label>
+              <input type="text" id="amount" name="amount" placeholder="R0.00 (before VAT)" value="" />
+              <label for="amount">VAT %</label>
+              <input type="text" id="vat" name="vat" value="15%" />
+            </fieldset>
+            <input type="submit" value="Calculate VAT" />
+            <fieldset>
+              <legend>The VAT of entered amount is</legend>
+              <!-- The result needs to be output into the value below -->
+              <input type="text" id="result" name="result" placeholder="R0.00" value="" />
+            </fieldset>
         </div>
 
         <!-- Start of Script -->
         <script>
             
             // VAT constant:
-            const vat = 14;
+            const vat = 15;
 
             // Get user input and save to variable
-                // code here..
+            let amount;
 
             // Perform calculation here
-            let result;// save result of calculation to answer variable.
+
+            function {
+                let amount = Number;
+                let vatcalc = amount * vat;
+                result: Number;
+
+            }
+            let result = (amount * vat);// save result of calculation to answer variable.
 
             // log VAT out to consol, DOM, or alert
             console.log("The VAT of entered amount is " + result);
