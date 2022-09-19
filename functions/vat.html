@@ -20,7 +20,7 @@
             <fieldset>
                 <legend title="amount">VAT Calculator</legend>
               <label for="amount">Amount</label>
-              <input type="text" id="amount" name="amount" placeholder="R0.00 (before VAT)" value="" />
+              <input type="text" id="amountEnterred" name="amount" placeholder="R0.00 (before VAT)" value="" />
               <label for="amount">VAT %</label>
               <input type="text" id="vat" name="vat" value="15%" />
             </fieldset>
@@ -40,20 +40,17 @@
             console.log(vat);
 
             // Get user input and save to variable
-            let amount =("")
-            console.log(amount);
+            let amountEnterred;
+            console.log(amountEnterred);
 
             // Perform calculation here
-            function vatAmount(Number) {
-                return amount * vat;
-            }
+            let vatAmount = (amountEnterred * vat); 
+            
+              console.log(vatAmount);
 
-            let Number = vatAmount;
-            console.log(Number);
-
-                        
-            let result = (amount * vat);// save result of calculation to answer variable.
-
+            // save result of calculation to answer variable.           
+            let result = vatAmount          
+            
             // log VAT out to consol, DOM, or alert
             console.log("The VAT of entered amount is " + result);
 
