@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversion Calculator</title>
+        <link rel="stylesheet" href="../css/style.css">
+    
+    </head>
+    
+    <body>
+        
+        <h1 id="title">
+            Distance conversion: Miles to Kilometers
+        </h1>
+        <div>
+          <form id="app" onsubmit="return tcalc();">
+              <fieldset>
+                <!--Miles user will enter-->
+                <tr>
+                  <td>Miles:</td>
+                  <td>
+                    <input type="number" min="0" step="1"
+                           id="miles" placeholder="Enter miles here" value=""/>
+                  </td>
+                </tr>
+            
+                <!--Conversion factor-->
+                <tr>
+                  <td>Factor</td>
+                  <td>
+                    <input type="number" max="1000"
+                           id="factor" required value="1.60934"/>
+                  </td>
+                </tr>
+              </fieldset>
+              <fieldset>
+  
+                <!--Calculated distance in kilometers-->
+                <tr>
+                  <td>Kilometers</td>
+                  <td>
+                    <input type="text" readonly id="kilometers"/>
+                  </td>
+                </tr>
+                           
+              </fieldset>
+             
+              <!--Button the user can click on-->
+              <input id="app button" type="submit" value="Calculate"/>
+            </form>
+  
+          <!-- Start of Script -->
+          <script>
+              function tcalc () {
+                // (A) miles + factor
+                let miles = document.getElementById("miles").value,
+                    factor = document.getElementById("factor").value;
+                miles = parseFloat(miles);
+                factor = parseFloat(factor);
+               
+                // (B) CALCULATE kilometers
+                let kilometers = miles * factor;
+               
+                            
+                // (D) SET CALCULATED VALUES TO HTML FIELDS
+                document.getElementById("kilometers").value = kilometers;
+                return false;
+              }
+              </script>
+          <!-- End of Script -->
+  
+      </div>
+        
+
+ 
+    </body>
+
+</html>
