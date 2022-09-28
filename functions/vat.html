@@ -16,46 +16,47 @@
             VAT Calculator
         </h1>
 
-        <form onsubmit="return tcalc();">
-            <table>
-              <!-- (A) ITEM PRICE -->
+        <form id="app" onsubmit="return tcalc();">
+            <fieldset>
+              <!--Amount user will enter-->
               <tr>
-                <td>Price</td>
+                <td>Amount:</td>
                 <td>
-                  <input type="number" min="0" max="9999" step="0.01"
-                         id="taxprice" required value="12.34"/>
+                  <input type="number" min="0" step="0.01"
+                         id="taxprice" placeholder="R0.00 (before VAT)" value=""/>
                 </td>
               </tr>
            
           
-              <!-- (B) TAX PERCENTAGE -->
+              <!--VAT percentage that user can change-->
               <tr>
-                <td>Tax Percentage</td>
+                <td>VAT percentage</td>
                 <td>
-                  <input type="number" min="1" max="100" step="1"
-                         id="taxperc" required value="9"/>
+                  <input type="number" min="1" max="100" step="0.5"
+                         id="taxperc" required value="15"/>
                 </td>
               </tr>
-           
-              <!-- (C) TAXABLE AMOUNT -->
+            </fieldset>
+            <fieldset>
+              <!--Calculated VAT amount-->
               <tr>
-                <td>Tax Amount</td>
+                <td>VAT amount</td>
                 <td>
                   <input type="text" readonly id="taxamt"/>
                 </td>
               </tr>
            
-              <!-- (D) TOTAL WITH TAX -->
+              <!--Total after adding the calculated VAT amount-->
               <tr>
-                <td>Total With Tax</td>
+                <td>Total with VAT</td>
                 <td>
                   <input type="text" readonly id="taxgrand"/>
                 </td>
               </tr>
-            </table>
+            </fieldset>
            
-            <!-- (E) GO! -->
-            <input type="submit" value="Go!"/>
+            <!--Button the user can click on-->
+            <input id="app button" type="submit" value="Calculate"/>
           </form>
 
         <!-- Start of Script -->
