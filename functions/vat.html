@@ -23,7 +23,7 @@
                 <td>Amount:</td>
                 <td>
                   <input type="number" min="0" step="0.01"
-                         id="taxprice" placeholder="R0.00 (before VAT)" value=""/>
+                         id="enteredAmount" placeholder="R0.00 (before VAT)" value=""/>
                 </td>
               </tr>
            
@@ -33,7 +33,7 @@
                 <td>VAT percentage</td>
                 <td>
                   <input type="number" min="1" max="100" step="0.5"
-                         id="taxperc" required value="15"/>
+                         id="vatperc" required value="15"/>
                 </td>
               </tr>
             </fieldset>
@@ -42,7 +42,7 @@
               <tr>
                 <td>VAT amount</td>
                 <td>
-                  <input type="text" readonly id="taxamt"/>
+                  <input type="text" readonly id="vatamt"/>
                 </td>
               </tr>
            
@@ -50,7 +50,7 @@
               <tr>
                 <td>Total with VAT</td>
                 <td>
-                  <input type="text" readonly id="taxgrand"/>
+                  <input type="text" readonly id="totalVat"/>
                 </td>
               </tr>
             </fieldset>
@@ -62,13 +62,13 @@
         <!-- Start of Script -->
         <script>
             function tcalc () {
-              // (A) ITEM PRICE + TAX PERCENTAGE
-              let price = document.getElementById("taxprice").value,
-                  percent = document.getElementById("taxperc").value;
+              // (A) ITEM PRICE + VAT PERCENTAGE
+              let price = document.getElementById("enteredAmount").value,
+                  percent = document.getElementById("vatperc").value;
               price = parseFloat(price);
               percent = parseFloat(percent);
              
-              // (B) CALCULATE TAX AMOUNT
+              // (B) CALCULATE VAT AMOUNT
               let tax = (price / 100) * percent,
                   grand = price * ((100 + percent) / 100);
              
@@ -80,8 +80,8 @@
               };
              
               // (D) SET CALCULATED VALUES TO HTML FIELDS
-              document.getElementById("taxamt").value = tax;
-              document.getElementById("taxgrand").value = grand;
+              document.getElementById("vatamt").value = tax;
+              document.getElementById("totalVat").value = grand;
               return false;
             }
             </script>
